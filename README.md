@@ -1,7 +1,7 @@
 Website focusing on cancer research conducted at the University of Auckland, New Zealand.
 The website looks at cancer as a risk factor for cardiovascular disease.
 
-The application has a built in cadiovascular disease calculator for cancer surviors.
+The application has a built in cadiovascular disease risk calculator for cancer surviors.
 
 
 Website: 
