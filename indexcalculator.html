@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="stylecalculator.css" />
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="stylecalculator.css" />
+
+</head>
+<body>
+
+
+
+<header>
+  <div class="wrap">
+    <nav>
+        <div class="brand">Survivor Heart Check Calculator</div>
+        <div style="flex:1"></div>
+    <a class="btn-back" href="index.html">Back</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+
+  <section class="card calculator" id="calculator" style="margin-top:18px"  >
+    <form id="riskForm" novalidate>
+
+      <div class="field-group" >
+        <h2 class="group-title" >About you</h2>
+
+<label for="age">Age </label>
+<input type="number" id="age" name="age" min="18" max="99" required placeholder="e.g. 40" oninput="validateAge(this)">
+
+
+
+        <label for="sex">Sex</label>
+        <select id="sex" name="sex" required>
+          <option value="" disabled selected>Select</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+
+        <label for="ethnicity">Ethnicity</label>
+        <select id="ethnicity" name="ethnicity" required>
+          <option value="" disabled selected>Select</option>
+          <option value="european">European</option>
+          <option value="maori">Māori</option>
+          <option value="pacific">Pacific</option>
+          <option value="indian">Indian</option>
+          <option value="asian">Chinese or other Asian</option>
+        </select>
+
+        <label for="deprivation">Socioeconomic deprivation quintile</label>
+        <select id="deprivation" name="deprivation" required>
+          <option value="" disabled selected>Select</option>
+          <option value="1">1 — least deprived</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 — most deprived</option>
+        </select>
+        <p class="hint">A general indicator of relative socioeconomic position in your area. If unsure, choose 3.</p>
+      </div>
+
+      <div class="field-group">
+        <h2 class="group-title">Cancer history</h2>
+
+        <label for="cancerType">Type of cancer (if any)</label>
+        <select id="cancerType" name="cancerType">
+          <option value="none">None / prefer not to say</option>
+          <option value="breast">Breast</option>
+          <option value="prostate">Prostate</option>
+          <option value="melanoma">Melanoma</option>
+          <option value="colorectal">Colorectal</option>
+          <option value="bladder">Bladder</option>
+          <option value="cervix">Cervical</option>
+          <option value="uterine">Uterine</option>
+          <option value="ovarian">Ovarian</option>
+          <option value="kidney">Kidney</option>
+          <option value="lung">Lung</option>
+          <option value="liver">Liver</option>
+          <option value="stomach">Stomach</option>
+          <option value="oesophageal">Oesophageal</option>
+          <option value="oral">Oral cavity</option>
+          <option value="pancreas">Pancreatic</option>
+          <option value="thyroid">Thyroid</option>
+          <option value="nhl">Non-Hodgkin lymphoma</option>
+          <option value="leukaemia">Leukaemia</option>
+          <option value="myeloma">Multiple myeloma</option>
+          <option value="cns">Brain / CNS</option>
+          <option value="other">Other / not listed</option>
+        </select>
+        
+      </div>
+
+      <div class="field-group">
+        <h2 class="group-title">Health history</h2>
+
+        <label for="smoking">Smoking status</label>
+        <select id="smoking" name="smoking" required>
+          <option value="" disabled selected>Select</option>
+          <option value="never">Never smoked</option>
+          <option value="ex">Ex-smoker</option>
+          <option value="current">Current smoker</option>
+        </select>
+
+        <div class="checkbox-row">
+          <label class="checkbox-label"><input type="checkbox" id="familyHistory" name="familyHistory"> Family history of premature cardiovascular disease</label>
+          <label class="checkbox-label"><input type="checkbox" id="afib" name="afib"> History of atrial fibrillation</label>
+          <label class="checkbox-label"><input type="checkbox" id="diabetes" name="diabetes"> Diabetes</label>
+        </div>
+
+        <label for="sbp">Systolic blood pressure (mmHg)</label>
+        <input type="number" id="sbp" name="sbp" min="80" max="240" required placeholder="e.g. 130">
+
+        <label for="tchdl">Total cholesterol : HDL ratio</label>
+        <input type="number" id="tchdl" name="tchdl" min="1" max="15" step="0.1" required placeholder="e.g. 4.0">
+        
+
+        <div class="checkbox-row">
+          <label class="checkbox-label"><input type="checkbox" id="bpMed" name="bpMed"> Taking blood pressure–lowering medication</label>
+          <label class="checkbox-label"><input type="checkbox" id="lipidMed" name="lipidMed"> Taking lipid-lowering medication</label>
+          <label class="checkbox-label"><input type="checkbox" id="antiMed" name="antiMed"> Taking antithrombotic medication</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Calculate my risk</button>
+    </form>
+
+    <div id="result" class="result" hidden>
+      <h2>Your estimated 5-year CVD risk</h2>
+      <div class="result-figures">
+        <div class="figure">
+          <span class="figure-label">Baseline</span>
+          <span class="figure-value" id="baseRisk">—</span>
+        </div>
+        <div class="figure-arrow">→</div>
+        <div class="figure highlight">
+          <span class="figure-label">With cancer-history adjustment</span>
+          <span class="figure-value" id="adjRisk">—</span>
+        </div>
+      </div>
+      <p class="result-note" id="resultNote"></p>
+      <p class="result-disclaimer">
+        This estimate is for general information only. It is not a diagnosis and does not
+        replace a conversation with your doctor or primary care provider about your individual risk.
+      </p>
+    </div>
+  </section>
+
+  <section class="card methodology" id="methodology" style="margin-top:18px">
+    <h2>Limitations</h2>
+    <p>
+      <strong>This is a simplification, and it has real limitations.</strong> The UK and New
+      Zealand cohorts differ in population and healthcare context; the hazard ratios are not
+      separated by treatment type (chemotherapy and chest radiotherapy carry meaningfully higher
+      cardiovascular risk than surgery alone); and combining hazard ratios across outcomes assumes
+      they affect the underlying risk similarly, which has not been formally validated. Some
+      cancer types (particularly CNS/brain cancer) carry wide uncertainty in the original study
+      due to small numbers of events. Treat this tool as illustrative, not diagnostic.
+    </p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Built for educational purposes. Not a substitute for medical advice.</p>
+  </div>
+</footer>
+
+<script src="scriptcalculator.js"></script>
+</body>
+</html>
