@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap');
+:root{--bg:#f6f8fb;--card:#fff;--accent:#0078d4}
+body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:#111}
+header{background:linear-gradient(90deg,var(--accent),#000000);color:#fff;padding: 12px;}
+.container{max-width:720px;margin:12px auto;padding:0 16px}
+nav{display:flex;gap:10px;align-items:center}
+.brand{font-weight:700;font-size:1.25rem}
+.card{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+footer{margin:40px 0 80px;color:#6b7280;text-align:center}
+.btn{display:inline-block;padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+label{display:block;margin-top:8px;font-size:0.95rem}
+input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3;margin-top:6px}
