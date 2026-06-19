@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Survivor Heart Check</title>
+	<link rel="stylesheet" href="style.css" />
+   
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="stylecalculator.css" />
+
+</head>
+<body>
+	<header>
+		<div class="container">
+			<nav>
+				<div class="brand">Survivor Heart Check</div>
+				<div style="flex:1"></div>
+                <a class="btn" href="indexcalculator.html">Start Risk Assessment</a>
+			</nav>
+		</div>
+	</header>
+
+	<main class="container" role="main">
+		<section class="card">
+			<h1 style="margin:0 0 8px">About Survivor Heart Check</h1>
+			<p style="margin:0 0 12px;color:#000000">Survivor Heart Check is a free and private online tool for assessing cardiovascular disease (CVD) risk, adjusting for cancer history. This is a demo application for educational purposes only and not intended as medical advice. If you are experiencing CVD symptoms or concerns, please consult a clinician.</p>
+			<div class="grid">
+				
+
+				
+			</div>
+		</section>
+
+		<section id="check" class="card" style="margin-top:18px">
+			<h2 style="margin-top:0">CVD risk assessment validity</h2>
+			<p style="margin:0 0 12px;color:#000000">The CVD risk assessment conducted by this tool is based on equations published by Pylypchuk and colleagues in <em>The Lancet</em> (2018). The equations were derived from more than 400,000 New Zealand primary care patients using PREDICT software. It estimates a 5-year risk of a first CVD event based on a hazard model with multiple variables such as age, ethnicity, and family history as predictors.
+
+        </p>
+        </section>       
+
+        <section id="check" class="card" style="margin-top:18px">
+			<h2 style="margin-top:0">Why does the CVD risk assessment need to be adjusted for cancer history?</h2>
+			<p style="margin:0 0 12px;color:#000000">Cancer survivors face different cardiovascular risks than the general population. A validation study (Tawfiq et al., <em>The Lancet</em>, 2023) tested the equations for 14000 New Zealand cancer survivors, compared to their observed CVD events. The equations performed well; however, the validation study recommended a cancer-specific variable to be added for improved accuracy. This tool applies a simple adjustment to the CVD risk estimate based on the presence of a cancer history, as recommended by the validation study.</p>
+
+		</section>
+
+        <section id="check" class="card" style="margin-top:18px">
+			<h2 style="margin-top:0">How is the cancer-history adjustment applied?</h2>
+			<p style="margin:0 0 12px;color:#000000">The cancer-history adjustment applied here is drawn from Strongman and colleagues (<em>The Lancet</em>, 2019), a large UK cohort study comparing cardiovascular outcomes in 
+over 100,000 cancer survivors compared to 500,000 cancer-free controls. For each cancer, this tool averages the adjusted hazard ratios for CVD events that most closely overlap with the PREDICT 
+definition of CVD. This average is used as a cancer-specific multiplier, which is applied to the baseline assessment.
+</p>
+		</section>
+
+        <section id="check" class="card" style="margin-top:18px">
+			<h2 style="margin-top:0">Limitations</h2>
+			<p style="margin:0 0 12px;color:#000000">Survivor Heart Check is a simplification, and it has real limitations. Studies done in the UK and New Zealand had to be combined to produce a working model. This limits useful conclusions that can be drawn from this tool, as the UK and New Zealand cohorts differ in population and healthcare context. Another limitation is the hazard ratios, which were obtained by averaging different CVD events and don't account for cancer treatment types. Some cancer types (particularly CNS/brain cancer) carry wide uncertainty in the original study due to small numbers of events. The application has not been endorsed by any professional and remains a personal project.
+</p>
+		</section>
+
+          <section class="card sources" id="sources" style="margin-top:18px">
+    <h2 style="margin-top:0">References</h2>
+    <ul>
+      <li>Pylypchuk R, Wells S, Kerr A, et al. Cardiovascular disease risk prediction equations in 400,000 primary care patients in New Zealand: a derivation and validation study. <em>The Lancet</em>, 2018.</li>
+      
+      <li>Tawfiq E, Selak V, Elwood JM, et al. Performance of cardiovascular disease risk prediction equations in more than 14,000 survivors of cancer in New Zealand primary care: a validation study. <em>The Lancet</em>, 2023.</li>
+      
+      <li>Strongman H, Gadd S, Matthews A, et al. Medium and long-term risks of specific cardiovascular diseases in survivors of 20 adult cancers: a population-based cohort study using multiple linked UK electronic health records databases. <em>The Lancet</em>, 2019.</li>
+    </ul>
+    </section>
+
+  <footer>
+This site is independently produced for educational and recreational purposes. It is not affiliated with, endorsed by, or
+      representing the VAREANZ Governance Group, the University of Auckland, or the authors of
+      the studies cited above. For the official New Zealand CVD risk calculator intended for use
+      by healthcare professionals, see the VAREANZ research program.
+    <hr />
+			<div>Built for educational purposes. Not a substitute for medical advice.</div>
+		</footer>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
